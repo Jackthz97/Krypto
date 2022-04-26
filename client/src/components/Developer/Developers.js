@@ -43,21 +43,23 @@ const Developers = (props) => {
             </Typography>
             <a
               href={props.github}
+              target={"_blank"}
               style={
                 props.mode === "dark"
                   ? { textDecoration: "none", color: "white" }
                   : { textDecoration: "none", color: "black" }
-              }
+              } rel="noreferrer"
             >
               <GitHubIcon style={{ fontSize: 50 }} />
             </a>
             <a
               href={props.linkedin}
+              target={"_blank"}
               style={
                 props.mode === "dark"
                   ? { textDecoration: "none", color: "white" }
                   : { textDecoration: "none", color: "black" }
-              }
+              } rel="noreferrer"
             >
               <LinkedInIcon style={{ fontSize: 50 }} />
             </a>
