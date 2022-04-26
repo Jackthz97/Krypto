@@ -6,10 +6,8 @@ import "../Dashboard/TrendingCrypto.scss";
 import { useState, useEffect } from "react";
 import Developers from "./Developers";
 import "./Developer.scss";
-import { Link } from "react-router-dom";
 
 const DeveloperList = (props) => {
-  // const username = JSON.parse(localStorage.getItem('username'));
   const [adminColor, setAdminColor] = useState("admin");
   const [adminColor2, setAdminColor2] = useState("admin2");
   const [adminColor3, setAdminColor3] = useState("admin3");
@@ -38,9 +36,9 @@ const DeveloperList = (props) => {
       name: "Jack",
       github: "https://github.com/Jackthz97?tab=repositories",
       linkedin: "https://www.linkedin.com/in/tianhao-zhang-b49a5b226/",
-      img: "Jack.png",
+      img: "jack.jpg",
       description:
-        "Full Stack Developer that loves to create & develop websites!",
+        "Full hello Stack Developer that loves to create & develop websites!",
     },
     {
       name: "Saurabh",
