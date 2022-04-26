@@ -38,7 +38,7 @@ const DeveloperList = (props) => {
       linkedin: "https://www.linkedin.com/in/tianhao-zhang-b49a5b226/",
       img: "jack.jpg",
       description:
-        "Full hello Stack Developer that loves to create & develop websites!",
+        "Full Stack Developer that loves to create & develop websites!",
     },
     {
       name: "Saurabh",
