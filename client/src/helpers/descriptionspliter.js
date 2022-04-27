@@ -14,7 +14,7 @@ export const descriptionspliter = (description) => {
 };
 
 export const titlespliter = (title) => {
-  const limit = 37;
+  const limit = 34;
   let newTitle = "";
   if (title.length > limit) {
     for (let i = 0; i < title.length; i++) {

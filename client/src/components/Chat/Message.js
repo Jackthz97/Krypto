@@ -5,9 +5,9 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { CardActionArea } from "@mui/material";
 import { Paper } from "@mui/material";
+import admin1 from '../Dashboard/jack.jpg' 
 export class Message extends React.Component {
   render() {
-    console.log("this:", this);
 
     return (
       <Paper elevation={6} sx={{ width: 250 }}>
@@ -22,7 +22,7 @@ export class Message extends React.Component {
         >
           <CardActionArea>
             <Chip
-              avatar={<Avatar alt="Natacha" src={this.props.img} />}
+              avatar={<Avatar alt="Natacha" src={(this.props.img === "admin1") ? admin1 : this.props.img} />}
               label={this.props.user}
               variant="outlined"
             />

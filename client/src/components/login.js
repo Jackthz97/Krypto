@@ -17,6 +17,7 @@ import Fingerprint from "@mui/icons-material/Fingerprint";
 import EmailIcon from "@mui/icons-material/Email";
 import InputAdornment from "@mui/material/InputAdornment";
 import LockIcon from "@mui/icons-material/Lock";
+import { useState } from "react";
 
 function Copyright(props) {
   return (
@@ -29,7 +30,7 @@ function Copyright(props) {
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
         krypto
-      </Link>{" "}
+      </Link>
       {new Date().getFullYear()}
       {"."}
     </Typography>
@@ -39,6 +40,16 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function Login() {
+  const [error, setError] = useState("no");
+  const [count, setCount] = useState(0);
+
+  const handleError = () => {
+    (count >= 100) ? setError('no') :
+    error === "no" ? setError("yes") : setError("no");
+    setCount((prev) => prev + 1)
+    console.log("count", count)
+  };
+
   let navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -62,7 +73,6 @@ export default function Login() {
         }
       });
   };
-
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: "100vh" }}>
@@ -72,7 +82,7 @@ export default function Login() {
           xs={false}
           sm={4}
           md={7}
-          sx={{
+          sx={(count < 100 ) ? {
             backgroundImage: "url(/undraw_login_re_4vu2.svg)",
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
@@ -81,7 +91,18 @@ export default function Login() {
                 : t.palette.grey[900],
             backgroundSize: "1200px 900px",
             backgroundPosition: "center",
-          }}
+          } :
+          {
+            backgroundImage: "url(100+.gif)",
+            backgroundRepeat: "no-repeat",
+            backgroundColor: (t) =>
+              t.palette.mode === "light"
+                ? t.palette.grey[50]
+                : t.palette.grey[900],
+            backgroundSize: "1200px 900px",
+            backgroundPosition: "center",
+          }
+        }
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
@@ -156,7 +177,6 @@ export default function Login() {
                 variant="contained"
                 color="primary"
                 sx={{ mt: 5, mb: 2 }}
-                // startIcon={}
                 size="large"
               >
                 <IconButton
@@ -175,13 +195,28 @@ export default function Login() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Link onClick={handleError} href="#" variant="body2">
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
               </Grid>
               <Copyright sx={{ mt: 8 }} />
             </Box>
+            {error === "yes" ? (
+              <Typography color={"red"}>
+                lol you can't sign up silly 🤣
+              </Typography>
+            ) : (
+              <>
+              {((count % 10 === 0) && (count < 100) && (count > 0)) ? (
+              <Typography color={"red"}>
+                YO STOP!!!!!!!🤬🤬🤬
+              </Typography>
+            ) : (
+              <div>{count >= 100 ? "You win 🏳️" : "."}</div>
+            )}
+              </>
+            )}
           </Box>
         </Grid>
       </Grid>

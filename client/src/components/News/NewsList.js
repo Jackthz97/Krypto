@@ -116,7 +116,7 @@ const NewsList = (props) => {
                 gridAutoRows: "1fr",
               }}
             >
-              {newsList}{" "}
+              {newsList}
             </Box>
           ) : (
             <Box
@@ -126,7 +126,7 @@ const NewsList = (props) => {
                 gridAutoRows: "1fr",
               }}
             >
-              {newsLoading}{" "}
+              {newsLoading}
             </Box>
           )}
         </Box>

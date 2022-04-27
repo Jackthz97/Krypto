@@ -43,7 +43,6 @@ export class Chat extends React.Component {
       this.setState({ channels });
     });
     socket.on("message", (message) => {
-      console.log("this is the value of message: ", message);
       let channels = this.state.channels;
       channels.forEach((c) => {
         if (c.id === message.channel_id) {

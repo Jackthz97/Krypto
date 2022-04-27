@@ -30,6 +30,12 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Badge from "@mui/material/Badge";
 import LogoDevIcon from "@mui/icons-material/LogoDev";
+import { Grid } from "@mui/material";
+import Krypto from './KRYPTO_free-file.png'
+import homeicon from './home-animation.gif'
+import admin1 from './jack.jpg'
+import DiamondTwoToneIcon from '@mui/icons-material/DiamondTwoTone';
+import { blue } from "@mui/material/colors";
 
 const drawerWidth = 195;
 
@@ -190,7 +196,7 @@ export default function SideBarList(props) {
             >
               <img
                 src={
-                  "https://simplefx.com/assets/images/headers-img/home-animation.gif"
+                  homeicon
                 }
                 prop={"img"}
                 width="40"
@@ -205,7 +211,7 @@ export default function SideBarList(props) {
               pl={2}
               pt={1}
             >
-              Welcome to Krytpo, {username.name}!
+              {(username.name === 'Jack') ? <>Welcome back Lord {username.name}! <DiamondTwoToneIcon style={(props.mode === 'dark') ? {color: blue[200]} : {color: "white"}}/></> : <>Welcome to Krytpo, {username.name}!</>}
             </Typography>
           </Box>
           <Box>
@@ -241,8 +247,8 @@ export default function SideBarList(props) {
             width="5"
           >
             <Avatar
-              alt="Remy Sharp"
-              src={username.img}
+              alt={username.name}
+              src={(username.img === "admin1") ? admin1 : username.img}
               sx={{ width: 50, height: 50, border: 1, borderColor: "black" }}
             />
           </StyledBadge>
@@ -504,6 +510,18 @@ export default function SideBarList(props) {
             </ListItemButton>
           </Link>
         }
+      <Grid
+        container
+        justifyContent={"center"}
+        sx={{ opacity: open ? 1 : 0 }}
+        mt={2.5}
+      >
+        <Link to="/developers">
+          <Tooltip title="Krypto Devs" placement="right-start" arrow>
+            <img src={Krypto} alt={"Krypto"} width={70} />
+          </Tooltip>
+        </Link>
+      </Grid>
       </Drawer>
 
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>

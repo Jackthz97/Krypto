@@ -14,8 +14,6 @@ import CurrencyBitcoinIcon from "@mui/icons-material/CurrencyBitcoin";
 import Skeleton from "@mui/material/Skeleton";
 import "./TrendingCrypto.scss";
 
-// import SlideFromContainer from "./SlideFrom";
-
 const Dashboard = (props) => {
   const [state, setState] = useState([
     {
@@ -61,7 +59,6 @@ const Dashboard = (props) => {
         {loading ? (
           <div>
             <SideBarList mode={props.mode} setMode={props.setMode} />
-            {/* <SlideFromContainer/> */}
             <Typography fontSize={25} fontFamily={"Pacifico"} mt={3} mb={3}>
               Dashboard
             </Typography>
@@ -102,7 +99,6 @@ const Dashboard = (props) => {
                   direction={"row"}
                   gap={120}
                 >
-                  {" "}
                   <Typography fontSize={20} fontFamily={"Pacifico"}>
                     Watch List
                   </Typography>
@@ -123,7 +119,7 @@ const Dashboard = (props) => {
         ) : (
           <div>
             <SideBarList mode={props.mode} setMode={props.setMode} />
-            <Typography fontSize={20} fontFamily={"Pacifico"}>
+            <Typography fontSize={25} fontFamily={"Pacifico"} mt={3} mb={3}>
               Dashboard
             </Typography>
             <Typography align="center" fontSize={20} fontFamily={"Pacifico"}>
@@ -133,7 +129,7 @@ const Dashboard = (props) => {
             <Skeleton
               variant="rectangular"
               animation="wave"
-              width={1100}
+              width={1125}
               height={140}
             />
             <Grid pt={4} align="center">
@@ -146,18 +142,27 @@ const Dashboard = (props) => {
             </Grid>
             <Grid>
               {dashboard === "market" ? (
-                <Grid container display={"flex"} direction={"row"} gap={124}>
-                  {" "}
+                <Grid
+                  container
+                  display={"flex"}
+                  direction={"row"}
+                  justifyContent={"space-between"}
+                >
                   <Typography fontSize={20} fontFamily={"Pacifico"}>
                     Market
                   </Typography>
                   <Button onClick={handlewatchlist}>
-                    <FavoriteBorderIcon />
+                    <FavoriteBorderIcon/>
                   </Button>
                 </Grid>
               ) : (
-                <Grid container display={"flex"} direction={"row"} gap={120}>
-                  {" "}
+                <Grid
+                  container
+                  display={"flex"}
+                  justifyContent={"space-between"}
+                  direction={"row"}
+                  gap={120}
+                >
                   <Typography fontSize={20} fontFamily={"Pacifico"}>
                     Watch List
                   </Typography>

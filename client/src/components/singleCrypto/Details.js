@@ -15,7 +15,6 @@ import "./singleCrypto.scss";
 const Details = (props) => {
   console.log(props.details);
   return (
-    <div>
       <Grid container>
         <Grid
           container
@@ -263,7 +262,6 @@ const Details = (props) => {
           </Paper>
         </Grid>
       </Grid>
-    </div>
   );
 };
 

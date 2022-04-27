@@ -115,7 +115,7 @@ export default function CurrencyConverter(props) {
       sx={{
         m:'auto',
         width: 500,
-        height: 700,
+        height: 650,
         display: 'grid',
         gridTemplateRows: 'repeat(4, 1fr)',
         alignItems:'center',
@@ -123,7 +123,7 @@ export default function CurrencyConverter(props) {
       }}
     >
       <Typography variant="h4" textAlign={'center'} fontFamily={'Pacifico'} >Crypto Currency Converter</Typography> 
-      <TextField sx={{ m: 1, minWidth: 300 }}
+      <TextField sx={{ m: 1, minWidth: 300, mt: -2 }}
         id="outlined-number"
         value={number}
         label="Enter Amount to Convert"
@@ -133,7 +133,7 @@ export default function CurrencyConverter(props) {
         }}
         onChange={handleChange}
       />
-      <FormControl sx={{ m: 1, minWidth: 300 }}>
+      <FormControl sx={{ m: 1, minWidth: 300, mt: -2 }}>
         <InputLabel id="demo-simple-select-helper-label">From</InputLabel>
         <Select
           
@@ -146,7 +146,7 @@ export default function CurrencyConverter(props) {
               <Grid direction='row' display='flex' justifyContent={'space-between'}>
                 <MenuItem key ={crypto.name} value={{name:crypto.name, price: crypto.price, image: crypto.image}}>{crypto.name}
                 </MenuItem>
-                <img src={crypto.image} alt = "crypto" width = '30'/>
+                <img src={crypto.image} alt = "crypto" width = '35'/>
               </Grid>
               )
             };
@@ -161,7 +161,7 @@ export default function CurrencyConverter(props) {
         </Select>
         <FormHelperText>Primary Currency</FormHelperText>
       </FormControl>
-      <FormControl sx={{ m: 1, minWidth: 300 }}>
+      <FormControl sx={{ m: 1, minWidth: 300, mt: -2 }}>
         <InputLabel id="demo-simple-select-helper-label">To</InputLabel>
         <Select
           labelId="demo-simple-select-helper-label"
@@ -174,7 +174,7 @@ export default function CurrencyConverter(props) {
               return(
                 <Grid direction='row' display='flex' justifyContent={'space-between'}>
                   <MenuItem key ={crypto.name} value={{name:crypto.name, price: crypto.price, image: crypto.image}}>{crypto.name}</MenuItem>
-                  <img src={crypto.image} alt = "crypto" width = '30'/>
+                  <img src={crypto.image} alt = "crypto" width = '35'/>
               </Grid>
               )
             };
@@ -202,7 +202,8 @@ export default function CurrencyConverter(props) {
           height: 50,
           display:'grid',
           alignItems:'center',
-          justifyItems:'center'
+          justifyItems:'center',
+          mt: 2.5
         }}>
       {result ?
       <Chip icon={<CheckCircleIcon />} p={5} color="success" label={<Typography variant="h6" textAlign={'center'}>{`${number} ${primary.name} = ${result} ${secondary.name}`}</Typography>}> 

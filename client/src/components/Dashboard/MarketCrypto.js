@@ -87,7 +87,7 @@ const MarketCrypto = (props) => {
               </div>
             ) : (
               <div className="flexdown">
-                <FileDownloadIcon />{" "}
+                <FileDownloadIcon />
               </div>
             )}
           </div>

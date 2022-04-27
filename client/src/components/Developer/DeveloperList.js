@@ -30,7 +30,7 @@ const DeveloperList = (props) => {
       linkedin: "https://www.linkedin.com/in/justin-m-67321bb8/",
       img: "justin.jpeg",
       description:
-        "Full Stack Developer with Passion to create dynamic websites",
+        "Full stack developer with interests in building innovative websites!",
     },
     {
       name: "Jack",
@@ -38,7 +38,7 @@ const DeveloperList = (props) => {
       linkedin: "https://www.linkedin.com/in/tianhao-zhang-b49a5b226/",
       img: "jack.jpg",
       description:
-        "Full Stack Developer that loves to create & develop websites!",
+        "Full stack developer that loves to create & develop websites!",
     },
     {
       name: "Saurabh",
@@ -186,7 +186,7 @@ const DeveloperList = (props) => {
           </Typography>
         </Tooltip>
         <Tooltip title="Material UI" arrow>
-          <Typography className="anime" mr={3}>
+          <Typography className="anime" mr={4}>
             <a
               href="https://mui.com/material-ui/getting-started/installation/"
               rel="mui noreferrer"

@@ -1,6 +1,5 @@
 export default function topFourTrending(input) {
   let trending = [...input];
-  console.log("this is trending", typeof trending);
 
   const sorted = trending
     .sort(
