@@ -202,21 +202,6 @@ export default function Login() {
               </Grid>
               <Copyright sx={{ mt: 8 }} />
             </Box>
-            {error === "yes" ? (
-              <Typography color={"red"}>
-                lol you can't sign up silly 🤣
-              </Typography>
-            ) : (
-              <>
-              {((count % 10 === 0) && (count < 100) && (count > 0)) ? (
-              <Typography color={"red"}>
-                YO STOP!!!!!!!🤬🤬🤬
-              </Typography>
-            ) : (
-              <div>{count >= 100 ? "You win 🏳️" : "."}</div>
-            )}
-              </>
-            )}
           </Box>
         </Grid>
       </Grid>
