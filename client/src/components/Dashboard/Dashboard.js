@@ -89,7 +89,7 @@ const Dashboard = (props) => {
                   <Typography fontSize={20} fontFamily={"Pacifico"}>
                     Market
                   </Typography>
-                  <FavoriteBorderIcon onClick={handlewatchlist} />
+                  <FavoriteBorderIcon style={{cursor: 'pointer'}} onClick={handlewatchlist} />
                 </Grid>
               ) : (
                 <Grid
@@ -102,7 +102,7 @@ const Dashboard = (props) => {
                   <Typography fontSize={20} fontFamily={"Pacifico"}>
                     Watch List
                   </Typography>
-                  <CurrencyBitcoinIcon onClick={handlewatchlist} />
+                  <CurrencyBitcoinIcon style={{cursor: 'pointer'}} onClick={handlewatchlist} />
                 </Grid>
               )}
             </Grid>

@@ -16,7 +16,7 @@ const News = ({ title, image, description, date, source, loading }) => {
   if (loading) {
     return (
       <Box m="auto" onClick={(e) => window.open(`${source}`)}>
-        <Paper elevation={3}>
+        <Paper style={{cursor: 'pointer'}} elevation={3}>
           <Card sx={{ maxWidth: 300, mb: 4 }}>
             <CardMedia component="img" alt="news" height="140" image={image} />
             <CardContent>
